@@ -1,2 +1,1 @@
-# AppReactPertama
 # welcome-react-native
