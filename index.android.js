@@ -1,74 +1,63 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  Button,
+  Alert
 } from 'react-native';
+
 export default class AppReactPertama extends Component {
+
   render() {
+    const img = require('./img/me.jpg')
+    const changeMe = () => {
+      Alert.alert('Button has been pressed!')
+    }
     return (
       <View style={styles.container}>
-      <Image style={styles.image} source={{uri: "https://photos.google.com/photo/AF1QipNoXegimDfw_4zvaln8Qt1b8xwFpVjZ1FhP5Vuf"}} />
-        <Text style={styles.profile}>
-          Nama : OGI GINA PERMANA
+        <Image source={img} style={styles.img}/>
+        <Text style={styles.name}>
+          {profile.name}
         </Text>
-        <Text style={styles.profile}>
-          Batch Refactory
-        </Text>
+        <Button onPress={changeMe} style={styles.instructions} title={profile.refactory} />
 
-        <Text style={styles.welcome}>
-          Selamat datang di React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          Untuk memulai, modifiasi index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Tekan tombol R dua kali untuk me reload aplikasi,{'\n'}
-          Goncangkan atau tekan button menu untuk kembali ke menu dev
-        </Text>
+
       </View>
     );
   }
 }
 
-var styles = StyleSheet.create({
-   image:{
-    width: 100,
-    height: 100,
-  }
-});
+const profile = {
+  name: 'Ogi Gina Permana',
+  refactory: 'Refactory Batch#1'
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#33691E',
+    backgroundColor: '#263238',
   },
-  welcome: {
-    fontSize: 20,
+  img: {
+    width: 120,
+    height: 160,
+    borderRadius: 5,
+  },
+  name: {
+    fontSize: 24,
     textAlign: 'center',
     margin: 10,
-    color:'#fff',
+    color: '#FFFFFF'
   },
   instructions: {
     textAlign: 'center',
-    color: '#fff',
+    color: '#333333',
     marginBottom: 5,
   },
-  profile: {
-    textAlign: 'left',
-    margin: 5,
-    color: '#fff',
-  }
 });
 
 AppRegistry.registerComponent('AppReactPertama', () => AppReactPertama);
