@@ -8,6 +8,7 @@ import {
   Button,
   Alert
 } from 'react-native';
+import { Container, Content, Header, Title, Thumbnail } from 'native-base';
 export default class AppReactPertama extends Component {
 
   render() {
@@ -16,13 +17,21 @@ export default class AppReactPertama extends Component {
       Alert.alert('Button has been pressed!')
     }
     return (
-      <View style={styles.container}>
-        <Image source={img} style={styles.img}/>
-        <Text style={styles.name}>
-          {profile.name}
-        </Text>
-        <Button onPress={changeMe} style={styles.instructions} title={profile.refactory} />
-      </View>
+      <Container>
+                <Header>
+                    <Title>Profile Picture</Title>
+                </Header>
+                  <View style={styles.container}>
+                    <Thumbnail style={styles.img} size={150} source={require('./img/person.png')} />
+                    <Text style={styles.name}>
+                      {profile.name}
+                    </Text>
+                    <Text style={styles.name}>
+                      {profile.team}
+                    </Text>
+                    <Button onPress={changeMe} style={styles.instructions} title={profile.refactory} />
+                  </View>
+            </Container>
     );
   }
 }
@@ -38,12 +47,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#263238',
+    backgroundColor: '#B71C1C',
   },
   img: {
-    width: 120,
-    height: 160,
-    borderRadius: 5,
+    borderWidth: 1,
+    borderColor:'#FFF',
   },
   name: {
     fontSize: 24,
