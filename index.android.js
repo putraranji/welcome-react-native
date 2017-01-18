@@ -8,7 +8,6 @@ import {
   Button,
   Alert
 } from 'react-native';
-
 export default class AppReactPertama extends Component {
 
   render() {
@@ -23,8 +22,6 @@ export default class AppReactPertama extends Component {
           {profile.name}
         </Text>
         <Button onPress={changeMe} style={styles.instructions} title={profile.refactory} />
-
-
       </View>
     );
   }
