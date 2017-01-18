@@ -29,7 +29,8 @@ export default class AppReactPertama extends Component {
 
 const profile = {
   name: 'Ogi Gina Permana',
-  refactory: 'Refactory Batch#1'
+  refactory: 'Refactory Batch#1',
+  team: 'Cammora'
 }
 
 const styles = StyleSheet.create({
